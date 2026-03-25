@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adon Lopes | Engineering & Design</title>
+  <!-- Google Fonts for the modern, heavy typography -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-glow"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- AMBIENT BACKGROUND GLOWS -->
+  <div class="ambient-glow glow-left"></div>
+  <div class="ambient-glow glow-right"></div>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="nav-brand">adon lopes</div>
+    <div class="nav-email">mr.adonlopes@gmail.com | (+91) 9011220266</div>
+    <nav class="nav-links">
+      <a href="#about" class="hover-target">About</a>
+      <a href="#projects" class="hover-target">Projects</a>
+      <a href="#experience" class="hover-target">Experience</a>
+    </nav>
+  </header>
+
+  <!-- FLOATING LEFT SOCIAL SIDEBAR -->
+  <div class="social-sidebar">
+    <a href="https://github.com/adonlopes" target="_blank" class="social-icon-wrapper hover-target">
+      <svg class="social-icon" viewBox="0 0 24 24">
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/adon-lopes-a5a648296/" target="_blank"
+      class="social-icon-wrapper hover-target">
+      <svg class="social-icon" viewBox="0 0 24 24">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    </a>
+    <a href="mailto:mr.adonlopes@gmail.com" class="social-icon-wrapper hover-target">
+      <svg class="social-icon" viewBox="0 0 24 24">
+        <path
+          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text-left">
+        <div class="hero-pre-title">Hello! I'm</div>
+        <div class="hero-title">ADON<br>LOPES</div>
+      </div>
+
+      <div class="hero-avatar-container">
+        <!-- Using the processed User Custom PNG Image -->
+        <img id="hero-avatar" src="new_image_nobg.png" alt="Adon 3D Avatar">
+      </div>
+
+      <div class="hero-text-right">
+        <div class="hero-pre-title">AI & DATA SCIENCE</div>
+        <div class="hero-role-outline">ENGINEERING</div>
+        <div class="hero-role-solid">ENGINEERING</div>
+      </div>
+    </section>
+
+    <!-- WHAT I DO / SKILLS -->
+    <section id="about">
+      <div class="section-title-vertical">MY<br>SKILLS</div>
+
+      <div class="section-content">
+        <!-- Technical Arsenal Card -->
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+
+          <h3 class="hud-title">Technical Arsenal</h3>
+          <span class="hud-label">Core Technologies</span>
+          <p class="hud-desc">
+            A comprehensive stack built for engineering scalable applications and intelligent machine learning models.
+          </p>
+
+          <span class="hud-label" style="margin-top: 30px;">Programming & Databases</span>
+          <div class="skill-tray" style="margin-bottom: 25px;">
+            <span class="hud-chip">Python</span>
+            <span class="hud-chip">JavaScript</span>
+            <span class="hud-chip">HTML</span>
+            <span class="hud-chip">CSS</span>
+            <span class="hud-chip">MySQL</span>
+            <span class="hud-chip">MongoDB</span>
+          </div>
+
+          <span class="hud-label">Tools & Frameworks</span>
+          <div class="skill-tray">
+            <span class="hud-chip">Git / GitHub</span>
+            <span class="hud-chip">Jira</span>
+            <span class="hud-chip">Antigravity</span>
+            <span class="hud-chip">VS Code</span>
+            <span class="hud-chip">Excel</span>
+            <span class="hud-chip">Tableau</span>
+          </div>
+        </div>
+
+        <!-- Soft Skills Card -->
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+
+          <h3 class="hud-title">Soft Skills</h3>
+          <span class="hud-label">Professional Capabilities</span>
+          <p class="hud-desc">
+            Beyond code, I excel in environments that require leadership, decisive action, and clear communication to
+            drive projects to the finish line.
+          </p>
+
+          <div class="skill-tray" style="margin-top: 30px;">
+            <span class="hud-chip" style="border-color: var(--accent-blue); color: #fff;">Problem Solving</span>
+            <span class="hud-chip" style="border-color: var(--accent-blue); color: #fff;">Team Collaboration</span>
+            <span class="hud-chip" style="border-color: var(--accent-blue); color: #fff;">Leadership</span>
+            <span class="hud-chip" style="border-color: var(--accent-blue); color: #fff;">Communication</span>
+            <span class="hud-chip" style="border-color: var(--accent-blue); color: #fff;">Time Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title-vertical">THE<br>BUILDS</div>
+
+      <div class="section-content grid-2" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+
+        <!-- Project 1 -->
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+          <div class="card-orb cyan"></div>
+
+          <h3 class="hud-title" style="font-size: 2rem;">Real Estate Website</h3>
+          <span class="hud-label">Full Stack Diploma Project</span>
+          <p class="hud-desc" style="font-size: 1rem;">
+            A one-stop website; a place to browse for your future home and commercial places while finding the best
+            broker in your area.
+          </p>
+          <a href="https://github.com/adonlopes/Realestate-Website-" target="_blank" class="hud-btn hover-target">↗</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+
+          <h3 class="hud-title" style="font-size: 2rem;">Sign Pulse</h3>
+          <span class="hud-label">Computer Vision / ML</span>
+          <p class="hud-desc" style="font-size: 1rem;">
+            This system translates finger movements directly into corresponding letters, offering a valuable tool for
+            real-time communication and enhanced accessibility utilizing advanced image processing.
+          </p>
+          <a href="https://github.com/adonlopes/signLang" target="_blank" class="hud-btn hover-target">↗</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+
+          <h3 class="hud-title" style="font-size: 2rem;">Gramformer NLP</h3>
+          <span class="hud-label">AI / Transformers</span>
+          <p class="hud-desc" style="font-size: 1rem;">
+            A proof-of-concept for a novel method generating grammar error correction datasets. Implements an AI-powered
+            grammar correction tool using Gramformer, a transformer-based NLP model.
+          </p>
+          <a href="https://github.com/adonlopes/Grammer_Correction-using-NLP" target="_blank"
+            class="hud-btn hover-target">↗</a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+          <div class="card-orb cyan"></div>
+
+          <h3 class="hud-title" style="font-size: 2rem;">Amazon Sales</h3>
+          <span class="hud-label">Tableau Dashboard</span>
+          <p class="hud-desc" style="font-size: 1rem;">
+            Developed an interactive dashboard to analyze Amazon’s sales performance across categories, regions, and
+            segments. Visualized metrics like total sales and profit using charts and geo maps.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & EXPERIENCE TIMELINE -->
+    <section id="experience">
+      <div class="section-title-vertical">MY<br>PATH</div>
+
+      <div class="section-content">
+
+        <!-- INTERNSHIPS -->
+        <div class="hud-card hover-target" style="padding-bottom: 60px;">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+
+          <h3 class="hud-title">Internships</h3>
+          <span class="hud-label">Professional Experience</span>
+
+          <div style="margin-top: 40px; border-left: 1px solid var(--border-dashed); padding-left: 30px;">
+            <div style="margin-bottom: 50px; position:relative;">
+              <div
+                style="position:absolute; width: 10px; height: 10px; background:var(--accent-blue); border-radius:50%; left:-35px; top:5px; box-shadow: 0 0 10px var(--accent-blue);">
+              </div>
+              <h4 style="font-size: 1.4rem; margin-bottom: 5px;">QA Tester Intern</h4>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 1px;">
+                Propjini | Jan - Now, 2026
+              </p>
+              <p style="color:#d1d5db; line-height: 1.6;">
+                Quality Assurance Tester Intern at Propjini, responsible for executing test cases, validating websites
+                functionalities, and identifying and reporting defects to ensure application quality and reliability.
+              </p>
+            </div>
+
+            <div style="position:relative;">
+              <div
+                style="position:absolute; width: 10px; height: 10px; background:var(--accent-blue); border-radius:50%; left:-35px; top:5px; box-shadow: 0 0 10px var(--accent-blue);">
+              </div>
+              <h4 style="font-size: 1.4rem; margin-bottom: 5px;">Frontend Developer</h4>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 1px;">
+                Web Stag Technologies | June - Aug, 2023
+              </p>
+              <p style="color:#d1d5db; line-height: 1.6;">
+                Data Collection on real estate giants. Built a web-application that can connect direct to the Owner and
+                cut down the middleman.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+
+          <h3 class="hud-title">Education</h3>
+          <span class="hud-label">Academic Background</span>
+
+          <div style="margin-top: 40px; display:flex; flex-direction:column; gap:35px;">
+
+            <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px;">
+              <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;">Fr. Conceicao Rodrigues College of
+                Engineering</h4>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">
+                2023 - 2026</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="color: #a1a1aa; font-weight: 500;">Degree in AI & Data Science Engineering</p>
+                <span class="hud-chip" style="border-color: var(--accent-blue); color: var(--accent-blue);">8.32
+                  CGPA</span>
+              </div>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px;">
+              <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;">Bhausaheb Vartak Polytechnic</h4>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">
+                2020 - 2023</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="color: #a1a1aa; font-weight: 500;">Diploma in Computer Engineering</p>
+                <span class="hud-chip">80.40%</span>
+              </div>
+            </div>
+
+            <div>
+              <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;">St. Joseph English Medium School</h4>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">
+                2020</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="color: #a1a1aa; font-weight: 500;">Secondary School Certificate</p>
+                <span class="hud-chip">80.60%</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer
+      style="padding: 50px 0; border-top: 1px dashed var(--border-dashed); margin-top:50px; text-align:right; font-family: 'Space Grotesk', monospace; color: var(--text-muted); font-size:0.8rem;">
+      BUILD INITIATED 2026 // ADON LOPES
+    </footer>
+  </main>
+
+  <!-- INTERACTIVITY SCRIPTS -->
+  <script>
+    // --- CURSOR TRACKING LOGIC ---
+    const dot = document.getElementById('cursor-dot');
+    const glow = document.getElementById('cursor-glow');
+    const hoverTargets = document.querySelectorAll('.hover-target, a');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      // Move small dot exactly with cursor
+      dot.style.left = `${mouseX}px`;
+      dot.style.top = `${mouseY}px`;
+
+      // Move the large background glow smoothly
+      glow.style.left = `${mouseX}px`;
+      glow.style.top = `${mouseY}px`;
+    });
+
+    // Add magnetic scale effect on interactive links
+    hoverTargets.forEach(target => {
+      target.addEventListener('mouseenter', () => {
+        dot.style.transform = 'translate(-50%, -50%) scale(3)';
+        dot.style.backgroundColor = 'var(--accent-blue)';
+        glow.style.background = 'radial-gradient(circle, rgba(14,165,233,0.2) 0%, rgba(0,0,0,0) 60%)';
+      });
+      target.addEventListener('mouseleave', () => {
+        dot.style.transform = 'translate(-50%, -50%) scale(1)';
+        dot.style.backgroundColor = 'var(--text-main)';
+        glow.style.background = 'radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 60%)';
+      });
+    });
+
+    // --- 3D PARALLAX EFFECT FOR AVATAR ---
+    const heroContainer = document.querySelector('.hero');
+    const avatar = document.getElementById('hero-avatar');
+
+    heroContainer.addEventListener('mousemove', (e) => {
+      const rect = heroContainer.getBoundingClientRect();
+      // Calculate mouse position relative to the center of the hero section
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      // Max degrees of tilt
+      const maxTilt = 25;
+
+      // Generate rotations
+      const rotateX = -(y / (rect.height / 2)) * maxTilt;
+      const rotateY = (x / (rect.width / 2)) * maxTilt;
+
+      // Apply 3D transform with slight scale
+      avatar.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+
+      // Holographic 3D Depth Illusion (Glitch separated channels)
+      avatar.style.filter = `
+                drop-shadow(${rotateY * 0.5}px ${rotateX * -0.5}px 0px rgba(0, 255, 255, 0.4)) 
+                drop-shadow(${rotateY * -0.5}px ${rotateX * 0.5}px 0px rgba(255, 0, 255, 0.4))
+                drop-shadow(0 20px 40px rgba(0,0,0,0.6))
+            `;
+    });
+
+    heroContainer.addEventListener('mouseleave', () => {
+      // Smoothly snap back to origin
+      avatar.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+      avatar.style.filter = `drop-shadow(0 30px 50px rgba(0,0,0,0.8))`;
+    });
+
+    // Grid responsiveness via JS in case media queries are missed
+    function updateGrid() {
+      const grid = document.querySelector('.grid-2');
+      if (window.innerWidth <= 1024) {
+        grid.style.gridTemplateColumns = '1fr';
+      } else {
+        grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+      }
+    }
+    window.addEventListener('resize', updateGrid);
+    updateGrid();
+  </script>
+</body>
+
+</html>
