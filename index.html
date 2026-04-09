@@ -364,7 +364,7 @@
 
   <!-- SETTINGS / EDIT MODE BUTTON -->
   <button id="edit-mode-btn" class="hover-target"
-    style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; background: var(--accent-blue); color: #000; border: none; padding: 15px 25px; border-radius: 30px; font-weight: bold; font-family: 'Inter', sans-serif; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 10px; transition: var(--smooth);">
+    style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; background: var(--accent-blue); color: #000; border: none; padding: 15px 25px; border-radius: 30px; font-weight: bold; font-family: 'Inter', sans-serif; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.5); display: none; align-items: center; gap: 10px; transition: var(--smooth);">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="3"></circle>
@@ -875,6 +875,37 @@
         // Force fully reload from server/disk securely avoiding protocol failures
         window.location.reload();
       });
+    });
+
+    // --- SECRET ADMIN TOGGLE ---
+    // The "Edit Website" button is hidden by default to normal visitors.
+    // Typing the secret code "adonadmin" anywhere on the page toggles the edit button visibility.
+    const editModeBtn = document.getElementById('edit-mode-btn');
+    if (localStorage.getItem('adon_admin_mode') === 'true') {
+      editModeBtn.style.display = 'flex';
+    }
+
+    let secretKeys = '';
+    window.addEventListener('keydown', (e) => {
+      secretKeys += e.key.toLowerCase();
+      if (secretKeys.length > 15) secretKeys = secretKeys.slice(-15);
+      
+      if (secretKeys.includes('adonadmin')) {
+        secretKeys = ''; // reset sequence after trigger
+        const isCurrentlyHidden = editModeBtn.style.display === 'none';
+        
+        if (isCurrentlyHidden) {
+          editModeBtn.style.display = 'flex';
+          localStorage.setItem('adon_admin_mode', 'true');
+        } else {
+          editModeBtn.style.display = 'none';
+          localStorage.removeItem('adon_admin_mode');
+          // If currently in edit mode, turn it off before hiding the button
+          if (typeof isEditMode !== 'undefined' && isEditMode) {
+             editModeBtn.click();
+          }
+        }
+      }
     });
 
   </script>
