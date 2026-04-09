@@ -10,6 +10,11 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body.edit-mode-active * {
+      cursor: auto !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,11 +28,20 @@
   <div class="ambient-glow glow-right"></div>
 
   <!-- HEADER / NAV -->
-  <header>
-    <div class="nav-brand">adon lopes</div>
-    <div class="nav-email">mr.adonlopes@gmail.com | (+91) 9011220266</div>
+  <header style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+    <div class="header-left" style="display: flex; flex-direction: column;">
+      <div class="nav-brand">adon lopes</div>
+      <div class="nav-contact" style="font-size: 0.8rem; font-family: 'Space Grotesk', monospace; margin-top: 5px;">
+        <a href="mailto:mr.adonlopes@gmail.com" class="hover-target"
+          style="color: var(--text-muted); text-decoration: none;">mr.adonlopes@gmail.com</a>
+        <span style="color: var(--text-muted);"> | </span>
+        <a href="tel:+919011220266" class="hover-target" style="color: var(--text-muted); text-decoration: none;">(+91)
+          9011220266</a>
+      </div>
+    </div>
     <nav class="nav-links">
       <a href="#about" class="hover-target">About</a>
+      <a href="#skills" class="hover-target">Skills</a>
       <a href="#projects" class="hover-target">Projects</a>
       <a href="#experience" class="hover-target">Experience</a>
     </nav>
@@ -60,26 +74,65 @@
   <main>
 
     <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-text-left">
-        <div class="hero-pre-title">Hello! I'm</div>
-        <div class="hero-title">ADON<br>LOPES</div>
+    <section class="hero" id="home"
+      style="overflow: hidden; position: relative; display: flex; align-items: flex-end; justify-content: flex-start; padding: 0;">
+
+      <!-- LAYER 1 (BACK): Name text behind the person -->
+      <div
+        style="position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; padding-left: 4%; z-index: 1; pointer-events: none; user-select: none;">
+        <div class="hero-pre-title" style="opacity: 0.8;">Hello! I'm</div>
+        <div class="hero-title"
+          style="font-size: clamp(3.5rem, 7vw, 8rem); line-height: 0.88; opacity: 0.9; letter-spacing: -2px;">
+          ADON<br><span style="margin-left: 80px; display: inline-block;">LOPES</span></div>
       </div>
 
-      <div class="hero-avatar-container">
-        <!-- Using the processed User Custom PNG Image -->
-        <img id="hero-avatar" src="new_image_nobg.png" alt="Adon 3D Avatar">
+      <!-- LAYER 2 (MIDDLE): Person image — centered, bigger, cropped at bottom -->
+      <div
+        style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 2; display: flex; align-items: flex-end; height: 100%;">
+        <!-- Glow under the feet -->
+        <div
+          style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); width: 700px; height: 300px;
+                    background: radial-gradient(ellipse, rgba(14,165,233,0.25) 0%, transparent 70%); pointer-events: none;">
+        </div>
+        <img src="adon_hero.png" alt="Adon Lopes" id="hero-photo" style="height: 150vh; max-height: 920px; width: auto; object-fit: contain; object-position: bottom; display: block;
+                 -webkit-mask-image: linear-gradient(to top, transparent 0%, black 22%, black 100%);
+                 mask-image: linear-gradient(to top, transparent 0%, black 22%, black 100%);
+                 filter: drop-shadow(0 0 50px rgba(14,165,233,0.3)) drop-shadow(0 -10px 80px rgba(0,0,0,0.6));">
       </div>
 
-      <div class="hero-text-right">
-        <div class="hero-pre-title">AI & DATA SCIENCE</div>
-        <div class="hero-role-outline">ENGINEERING</div>
-        <div class="hero-role-solid">ENGINEERING</div>
+      <!-- LAYER 3 (FRONT): Role text, right side, on top of everything -->
+      <div style="position: absolute; right: 4%; top: 50%; transform: translateY(-50%); z-index: 4; text-align: right;">
+        <div class="hero-pre-title" style="justify-content: flex-end;">AI &amp; DATA SCIENCE</div>
+        <div class="hero-role-outline" style="font-size: clamp(2.5rem, 5vw, 5.5rem);">ENGINEERING</div>
+        <div class="hero-role-solid" style="font-size: clamp(2.5rem, 5vw, 5.5rem);">ENGINEERING</div>
+      </div>
+
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="about">
+      <div class="section-title-vertical">ABOUT<br>ME</div>
+
+      <div class="section-content">
+        <div class="hud-card hover-target">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+
+          <h3 class="hud-title">About Me</h3>
+          <span class="hud-label">Introduction</span>
+          <p class="hud-desc" style="max-width: 100%;">
+            I am Adon Lopes, a final-year AI and Data Science Engineering student at Fr. Conceicao Rodrigues College of
+            Engineering with a CGPA of 8.32.<br><br>
+            I have a strong interest in software testing, automation, and AI-based applications. Currently, I am working
+            as a QA Tester Intern at Propjini, where I am responsible for executing test cases, validating web
+            application functionalities, and identifying defects to ensure product quality and reliability.
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- WHAT I DO / SKILLS -->
-    <section id="about">
+    <section id="skills">
       <div class="section-title-vertical">MY<br>SKILLS</div>
 
       <div class="section-content">
@@ -123,9 +176,10 @@
           <h3 class="hud-title">Soft Skills</h3>
           <span class="hud-label">Professional Capabilities</span>
           <p class="hud-desc">
-            Beyond code, I excel in environments that require leadership, decisive action, and clear communication to drive projects to the finish line.
+            Beyond code, I excel in environments that require leadership, decisive action, and clear communication to
+            drive projects to the finish line.
           </p>
-          
+
           <div class="skill-tray" style="margin-top: 30px;">
             <span class="hud-chip" style="border-color: var(--accent-blue); color: #fff;">Problem Solving</span>
             <span class="hud-chip" style="border-color: var(--accent-blue); color: #fff;">Team Collaboration</span>
@@ -152,7 +206,8 @@
           <h3 class="hud-title" style="font-size: 2rem;">Real Estate Website</h3>
           <span class="hud-label">Full Stack Diploma Project</span>
           <p class="hud-desc" style="font-size: 1rem;">
-            A one-stop website; a place to browse for your future home and commercial places while finding the best broker in your area.
+            A one-stop website; a place to browse for your future home and commercial places while finding the best
+            broker in your area.
           </p>
           <a href="https://github.com/adonlopes/Realestate-Website-" target="_blank" class="hud-btn hover-target">↗</a>
         </div>
@@ -165,7 +220,8 @@
           <h3 class="hud-title" style="font-size: 2rem;">Sign Pulse</h3>
           <span class="hud-label">Computer Vision / ML</span>
           <p class="hud-desc" style="font-size: 1rem;">
-            This system translates finger movements directly into corresponding letters, offering a valuable tool for real-time communication and enhanced accessibility utilizing advanced image processing.
+            This system translates finger movements directly into corresponding letters, offering a valuable tool for
+            real-time communication and enhanced accessibility utilizing advanced image processing.
           </p>
           <a href="https://github.com/adonlopes/signLang" target="_blank" class="hud-btn hover-target">↗</a>
         </div>
@@ -178,9 +234,11 @@
           <h3 class="hud-title" style="font-size: 2rem;">Gramformer NLP</h3>
           <span class="hud-label">AI / Transformers</span>
           <p class="hud-desc" style="font-size: 1rem;">
-            A proof-of-concept for a novel method generating grammar error correction datasets. Implements an AI-powered grammar correction tool using Gramformer, a transformer-based NLP model.
+            A proof-of-concept for a novel method generating grammar error correction datasets. Implements an AI-powered
+            grammar correction tool using Gramformer, a transformer-based NLP model.
           </p>
-          <a href="https://github.com/adonlopes/Grammer_Correction-using-NLP" target="_blank" class="hud-btn hover-target">↗</a>
+          <a href="https://github.com/adonlopes/Grammer_Correction-using-NLP" target="_blank"
+            class="hud-btn hover-target">↗</a>
         </div>
 
         <!-- Project 4 -->
@@ -192,7 +250,8 @@
           <h3 class="hud-title" style="font-size: 2rem;">Amazon Sales</h3>
           <span class="hud-label">Tableau Dashboard</span>
           <p class="hud-desc" style="font-size: 1rem;">
-            Developed an interactive dashboard to analyze Amazon’s sales performance across categories, regions, and segments. Visualized metrics like total sales and profit using charts and geo maps.
+            Developed an interactive dashboard to analyze Amazon’s sales performance across categories, regions, and
+            segments. Visualized metrics like total sales and profit using charts and geo maps.
           </p>
         </div>
 
@@ -215,24 +274,32 @@
 
           <div style="margin-top: 40px; border-left: 1px solid var(--border-dashed); padding-left: 30px;">
             <div style="margin-bottom: 50px; position:relative;">
-              <div style="position:absolute; width: 10px; height: 10px; background:var(--accent-blue); border-radius:50%; left:-35px; top:5px; box-shadow: 0 0 10px var(--accent-blue);"></div>
+              <div
+                style="position:absolute; width: 10px; height: 10px; background:var(--accent-blue); border-radius:50%; left:-35px; top:5px; box-shadow: 0 0 10px var(--accent-blue);">
+              </div>
               <h4 style="font-size: 1.4rem; margin-bottom: 5px;">QA Tester Intern</h4>
-              <p style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 1px;">
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 1px;">
                 Propjini | Jan - Now, 2026
               </p>
               <p style="color:#d1d5db; line-height: 1.6;">
-                Quality Assurance Tester Intern at Propjini, responsible for executing test cases, validating websites functionalities, and identifying and reporting defects to ensure application quality and reliability.
+                Quality Assurance Tester Intern at Propjini, responsible for executing test cases, validating websites
+                functionalities, and identifying and reporting defects to ensure application quality and reliability.
               </p>
             </div>
 
             <div style="position:relative;">
-              <div style="position:absolute; width: 10px; height: 10px; background:var(--accent-blue); border-radius:50%; left:-35px; top:5px; box-shadow: 0 0 10px var(--accent-blue);"></div>
+              <div
+                style="position:absolute; width: 10px; height: 10px; background:var(--accent-blue); border-radius:50%; left:-35px; top:5px; box-shadow: 0 0 10px var(--accent-blue);">
+              </div>
               <h4 style="font-size: 1.4rem; margin-bottom: 5px;">Frontend Developer</h4>
-              <p style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 1px;">
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 1px;">
                 Web Stag Technologies | June - Aug, 2023
               </p>
               <p style="color:#d1d5db; line-height: 1.6;">
-                Data Collection on real estate giants. Built a web-application that can connect direct to the Owner and cut down the middleman.
+                Data Collection on real estate giants. Built a web-application that can connect direct to the Owner and
+                cut down the middleman.
               </p>
             </div>
           </div>
@@ -247,19 +314,25 @@
           <span class="hud-label">Academic Background</span>
 
           <div style="margin-top: 40px; display:flex; flex-direction:column; gap:35px;">
-            
+
             <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px;">
-              <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;">Fr. Conceicao Rodrigues College of Engineering</h4>
-              <p style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">2023 - 2026</p>
+              <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;">Fr. Conceicao Rodrigues College of
+                Engineering</h4>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">
+                2023 - 2026</p>
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <p style="color: #a1a1aa; font-weight: 500;">Degree in AI & Data Science Engineering</p>
-                <span class="hud-chip" style="border-color: var(--accent-blue); color: var(--accent-blue);">8.32 CGPA</span>
+                <span class="hud-chip" style="border-color: var(--accent-blue); color: var(--accent-blue);">8.32
+                  CGPA</span>
               </div>
             </div>
 
             <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 25px;">
               <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;">Bhausaheb Vartak Polytechnic</h4>
-              <p style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">2020 - 2023</p>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">
+                2020 - 2023</p>
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <p style="color: #a1a1aa; font-weight: 500;">Diploma in Computer Engineering</p>
                 <span class="hud-chip">80.40%</span>
@@ -268,7 +341,9 @@
 
             <div>
               <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;">St. Joseph English Medium School</h4>
-              <p style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">2020</p>
+              <p
+                style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;">
+                2020</p>
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <p style="color: #a1a1aa; font-weight: 500;">Secondary School Certificate</p>
                 <span class="hud-chip">80.60%</span>
@@ -282,10 +357,118 @@
     </section>
 
     <footer
-      style="padding: 50px 0; border-top: 1px dashed var(--border-dashed); margin-top:50px; text-align:right; font-family: 'Space Grotesk', monospace; color: var(--text-muted); font-size:0.8rem;">
+      style="padding: 50px 0; border-top: 1px dashed var(--border-dashed); margin-top: 50px; text-align: right; font-family: 'Space Grotesk', monospace; color: var(--text-muted); font-size: 0.8rem;">
       BUILD INITIATED 2026 // ADON LOPES
     </footer>
   </main>
+
+  <!-- SETTINGS / EDIT MODE BUTTON -->
+  <button id="edit-mode-btn" class="hover-target"
+    style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; background: var(--accent-blue); color: #000; border: none; padding: 15px 25px; border-radius: 30px; font-weight: bold; font-family: 'Inter', sans-serif; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 10px; transition: var(--smooth);">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path
+        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+      </path>
+    </svg>
+    <span>Edit Website</span>
+  </button>
+
+  <div id="admin-panel"
+    style="display: none; position: fixed; bottom: 90px; right: 30px; z-index: 1000; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border: 1px solid var(--border-dashed); padding: 20px; border-radius: 15px; width: 300px; max-height: 70vh; overflow-y: auto;">
+    <h3 style="margin-bottom: 15px; font-family: 'Space Grotesk', monospace; color: var(--accent-blue);">ADMIN PANEL
+    </h3>
+    <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 15px;">Click absolutely gracefully anywhere to edit
+      everything directly (including Navigation and Links).</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+      <button id="add-project-btn"
+        style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 5px; cursor: pointer; transition: var(--smooth); font-size: 0.8rem;">+
+        Project</button>
+      <button id="add-experience-btn"
+        style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 5px; cursor: pointer; transition: var(--smooth); font-size: 0.8rem;">+
+        Experience</button>
+      <button id="add-skill-btn"
+        style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 5px; cursor: pointer; transition: var(--smooth); font-size: 0.8rem;">+
+        Skill Chip</button>
+      <button id="add-education-btn"
+        style="width: 100%; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 5px; cursor: pointer; transition: var(--smooth); font-size: 0.8rem;">+
+        Education</button>
+    </div>
+
+    <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 15px 0;"></div>
+    <button id="discard-btn"
+      style="width: 100%; padding: 10px; background: rgba(234, 179, 8, 0.2); border: 1px solid rgba(234, 179, 8, 0.5); color: #eab308; border-radius: 5px; cursor: pointer; margin-bottom: 10px; transition: var(--smooth);">Discard
+      Current Edits</button>
+    <button id="reset-btn"
+      style="width: 100%; padding: 10px; background: rgba(239,68,68,0.2); border: 1px solid rgba(239,68,68,0.5); color: #ef4444; border-radius: 5px; cursor: pointer; transition: var(--smooth);">Factory
+      Reset Website</button>
+  </div>
+
+  <!-- CUSTOM CONFIRM MODAL -->
+  <div id="custom-modal"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+    <div
+      style="background: #0a0a0a; border: 1px dashed var(--border-dashed); padding: 30px; border-radius: 12px; width: 400px; max-width: 90%; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,1);">
+      <h3 style="color: #fff; font-family: 'Space Grotesk', monospace; margin-bottom: 25px; line-height: 1.4;"
+        id="custom-modal-text">Are you sure?</h3>
+      <div style="display: flex; gap: 15px; justify-content: center;">
+        <button id="custom-modal-cancel"
+          style="padding: 12px 25px; background: transparent; border: 1px solid #444; color: #cbd5e1; border-radius: 5px; cursor: pointer; font-family: 'Inter', sans-serif;">Cancel</button>
+        <button id="custom-modal-confirm"
+          style="padding: 12px 25px; background: #ef4444; border: 2px solid #ef4444; color: #fff; border-radius: 5px; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: bold;">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD PROJECT MODAL (with link fields) -->
+  <div id="add-project-modal"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+    <div
+      style="background: #0a0a0a; border: 1px dashed var(--border-dashed); padding: 30px; border-radius: 12px; width: 460px; max-width: 95vw; box-shadow: 0 20px 50px rgba(0,0,0,1);">
+      <h3 style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; margin-bottom: 20px;">+ Add New
+        Project</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <input id="proj-title" placeholder="Project Title"
+          style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem; box-sizing: border-box;">
+        <input id="proj-category" placeholder="Category / Role (e.g. Full Stack, ML)"
+          style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem; box-sizing: border-box;">
+        <textarea id="proj-desc" placeholder="Project description..." rows="3"
+          style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem; resize: vertical; box-sizing: border-box;"></textarea>
+        <input id="proj-github" placeholder="GitHub URL (optional)"
+          style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem; box-sizing: border-box;">
+        <input id="proj-live" placeholder="Live Demo URL (optional)"
+          style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem; box-sizing: border-box;">
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px; justify-content: flex-end;">
+        <button id="proj-modal-cancel"
+          style="padding: 10px 22px; background: transparent; border: 1px solid #444; color: #cbd5e1; border-radius: 5px; cursor: pointer; font-family: 'Inter', sans-serif;">Cancel</button>
+        <button id="proj-modal-add"
+          style="padding: 10px 22px; background: var(--accent-blue); border: none; color: #000; border-radius: 5px; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: bold;">Add
+          Project</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT LINK MODAL -->
+  <div id="edit-link-modal"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+    <div
+      style="background: #0a0a0a; border: 1px dashed var(--border-dashed); padding: 30px; border-radius: 12px; width: 420px; max-width: 95vw; box-shadow: 0 20px 50px rgba(0,0,0,1);">
+      <h3 style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; margin-bottom: 20px;">Edit Project
+        Link</h3>
+      <input id="edit-link-url" placeholder="https://github.com/..."
+        style="width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.95rem; box-sizing: border-box;">
+      <div style="display: flex; gap: 12px; margin-top: 16px; justify-content: flex-end;">
+        <button id="edit-link-cancel"
+          style="padding: 10px 22px; background: transparent; border: 1px solid #444; color: #cbd5e1; border-radius: 5px; cursor: pointer; font-family: 'Inter', sans-serif;">Cancel</button>
+        <button id="edit-link-save"
+          style="padding: 10px 22px; background: var(--accent-blue); border: none; color: #000; border-radius: 5px; cursor: pointer; font-family: 'Inter', sans-serif; font-weight: bold;">Save
+          Link</button>
+      </div>
+    </div>
+  </div>
 
   <!-- INTERACTIVITY SCRIPTS -->
   <script>
@@ -328,47 +511,372 @@
     const heroContainer = document.querySelector('.hero');
     const avatar = document.getElementById('hero-avatar');
 
-    heroContainer.addEventListener('mousemove', (e) => {
-      const rect = heroContainer.getBoundingClientRect();
-      // Calculate mouse position relative to the center of the hero section
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
+    if (avatar) {
+      heroContainer.addEventListener('mousemove', (e) => {
+        const rect = heroContainer.getBoundingClientRect();
+        // Calculate mouse position relative to the center of the hero section
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
-      // Max degrees of tilt
-      const maxTilt = 25;
+        // Max degrees of tilt
+        const maxTilt = 25;
 
-      // Generate rotations
-      const rotateX = -(y / (rect.height / 2)) * maxTilt;
-      const rotateY = (x / (rect.width / 2)) * maxTilt;
+        // Generate rotations
+        const rotateX = -(y / (rect.height / 2)) * maxTilt;
+        const rotateY = (x / (rect.width / 2)) * maxTilt;
 
-      // Apply 3D transform with slight scale
-      avatar.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        // Apply 3D transform with slight scale
+        avatar.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
 
-      // Holographic 3D Depth Illusion (Glitch separated channels)
-      avatar.style.filter = `
-                drop-shadow(${rotateY * 0.5}px ${rotateX * -0.5}px 0px rgba(0, 255, 255, 0.4)) 
-                drop-shadow(${rotateY * -0.5}px ${rotateX * 0.5}px 0px rgba(255, 0, 255, 0.4))
-                drop-shadow(0 20px 40px rgba(0,0,0,0.6))
-            `;
-    });
+        // Holographic 3D Depth Illusion (Glitch separated channels)
+        avatar.style.filter = `
+                  drop-shadow(${rotateY * 0.5}px ${rotateX * -0.5}px 0px rgba(0, 255, 255, 0.4)) 
+                  drop-shadow(${rotateY * -0.5}px ${rotateX * 0.5}px 0px rgba(255, 0, 255, 0.4))
+                  drop-shadow(0 20px 40px rgba(0,0,0,0.6))
+              `;
+      });
 
-    heroContainer.addEventListener('mouseleave', () => {
-      // Smoothly snap back to origin
-      avatar.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
-      avatar.style.filter = `drop-shadow(0 30px 50px rgba(0,0,0,0.8))`;
-    });
-    
+      heroContainer.addEventListener('mouseleave', () => {
+        // Smoothly snap back to origin
+        avatar.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+        avatar.style.filter = `drop-shadow(0 30px 50px rgba(0,0,0,0.8))`;
+      });
+    }
+
     // Grid responsiveness via JS in case media queries are missed
     function updateGrid() {
-        const grid = document.querySelector('.grid-2');
-        if(window.innerWidth <= 1024) {
-            grid.style.gridTemplateColumns = '1fr';
+      const grid = document.querySelector('.grid-2');
+      if (grid) {
+        if (window.innerWidth <= 1024) {
+          grid.style.gridTemplateColumns = '1fr';
         } else {
-            grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+          grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
         }
+      }
     }
     window.addEventListener('resize', updateGrid);
     updateGrid();
+
+    // --- LIVE EDIT / CMS LOGIC ---
+    const editBtn = document.getElementById('edit-mode-btn');
+    const adminPanel = document.getElementById('admin-panel');
+    const mainContent = document.querySelector('main');
+    let isEditMode = false;
+    let sessionBackupMain = '';
+    let sessionBackupHeader = '';
+
+    // Using a new cache key (v4 clears old stale caches that hid the hero image)
+    const CACHE_KEY = 'adonWebsiteState_v4';
+
+    // Modal UI Handlers
+    let modalConfirmCallback = null;
+    const customModal = document.getElementById('custom-modal');
+    const customModalText = document.getElementById('custom-modal-text');
+
+    function showConfirm(message, callback) {
+      customModalText.innerText = message;
+      modalConfirmCallback = callback;
+      customModal.style.display = 'flex';
+      isEditMode = false;
+    }
+
+    document.getElementById('custom-modal-cancel').addEventListener('click', () => {
+      customModal.style.display = 'none';
+      modalConfirmCallback = null;
+      if (document.body.classList.contains('edit-mode-active')) isEditMode = true;
+    });
+
+    document.getElementById('custom-modal-confirm').addEventListener('click', () => {
+      customModal.style.display = 'none';
+      if (modalConfirmCallback) modalConfirmCallback();
+      modalConfirmCallback = null;
+      if (document.body.classList.contains('edit-mode-active')) isEditMode = true;
+    });
+
+    // Load saved content from localStorage — restore only content sections, NEVER the hero
+    // (restoring full <main> would wipe the hero photo img tag)
+    const savedMain = localStorage.getItem(CACHE_KEY + '_main');
+    const savedHeader = localStorage.getItem(CACHE_KEY + '_header');
+
+    if (savedMain) {
+      // Parse the saved HTML and restore only the content sections individually
+      const parser = new DOMParser();
+      const savedDoc = parser.parseFromString('<main>' + savedMain + '</main>', 'text/html');
+      ['about', 'skills', 'projects', 'experience'].forEach(id => {
+        const savedSection = savedDoc.getElementById(id);
+        const liveSection = document.getElementById(id);
+        if (savedSection && liveSection) {
+          liveSection.innerHTML = savedSection.innerHTML;
+        }
+      });
+      // Also restore footer
+      const savedFooter = savedDoc.querySelector('footer');
+      const liveFooter = document.querySelector('main footer');
+      if (savedFooter && liveFooter) liveFooter.innerHTML = savedFooter.innerHTML;
+    }
+    if (savedHeader) document.querySelector('header').innerHTML = savedHeader;
+
+    // Prevent links from redirecting while edit mode is active
+    document.addEventListener('click', (e) => {
+      if (isEditMode && e.target.closest('a') && !e.target.closest('#admin-panel')) {
+        e.preventDefault();
+      }
+    });
+
+    function saveChanges() {
+      // Temporarily remove contenteditable and outlines before saving globally
+      const elements = document.querySelectorAll('[contenteditable]');
+      elements.forEach(el => {
+        el.removeAttribute('contenteditable');
+        el.style.outline = 'none';
+        el.style.padding = '0';
+        el.style.cursor = '';
+      });
+      removeDeleteButtons(); // Prevents baking delete buttons into the DOM snapshot
+      localStorage.setItem(CACHE_KEY + '_main', document.querySelector('main').innerHTML);
+      localStorage.setItem(CACHE_KEY + '_header', document.querySelector('header').innerHTML);
+    }
+
+    function injectDeleteButtons() {
+      const deletableBlocks = document.querySelectorAll('.hud-card, .hud-chip, #experience > div > div > div > div[style*="position:relative"], #experience > div > div > div > div > div[style*="border-bottom"]');
+      deletableBlocks.forEach(block => {
+        if (!block.querySelector('.block-delete-btn')) {
+          const delBtn = document.createElement('span');
+          delBtn.className = 'block-delete-btn hover-target';
+          delBtn.innerHTML = '×';
+          delBtn.style.cssText = 'position: absolute; top: -10px; right: -10px; background: #ef4444; color: white; border: none; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; font-weight: bold; font-family: Arial, sans-serif; z-index: 999; display: flex; justify-content: center; align-items: center; padding-bottom: 2px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); font-size: 14px; line-height: 1;';
+
+          if (window.getComputedStyle(block).position === 'static') {
+            block.style.position = 'relative';
+          }
+
+          delBtn.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            showConfirm('Permanently delete this element block? This cannot be undone once saved.', () => {
+              block.remove();
+            });
+          };
+          block.appendChild(delBtn);
+        }
+      });
+    }
+
+    function removeDeleteButtons() {
+      document.querySelectorAll('.block-delete-btn').forEach(btn => btn.remove());
+    }
+
+    function toggleEditState(state) {
+      if (state) {
+        document.body.classList.add('edit-mode-active');
+        injectDeleteButtons();
+      } else {
+        document.body.classList.remove('edit-mode-active');
+        removeDeleteButtons();
+      }
+
+      // Broadly select almost ALL texts on the page natively
+      const editableElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, a, .nav-brand, .hero-title, .hero-pre-title, .hero-role-outline, .hero-role-solid, .section-title-vertical, div.nav-contact, footer');
+
+      editableElements.forEach(el => {
+        // Skip svgs, specific buttons, and admin panel children from being made destructively editable
+        if (!el.querySelector('svg') && !el.classList.contains('hud-btn') && !el.closest('#admin-panel')) {
+          if (state) {
+            el.setAttribute('contenteditable', 'true');
+            el.style.outline = '1px dashed var(--accent-blue)';
+            el.style.padding = '2px';
+            el.style.cursor = 'text';
+          } else {
+            el.removeAttribute('contenteditable');
+            el.style.outline = 'none';
+            el.style.padding = '0';
+            el.style.cursor = '';
+          }
+        }
+      });
+    }
+
+    editBtn.addEventListener('click', () => {
+      isEditMode = !isEditMode;
+      if (isEditMode) {
+        // Entering edit mode
+        sessionBackupMain = mainContent.innerHTML;
+        sessionBackupHeader = document.querySelector('header').innerHTML;
+        adminPanel.style.display = 'block';
+        editBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+          <span>Save & Exit</span>`;
+        editBtn.style.background = '#22c55e'; // Green when saving
+        toggleEditState(true);
+      } else {
+        // Exiting edit mode
+        adminPanel.style.display = 'none';
+        editBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span>Edit Website</span>`;
+        editBtn.style.background = 'var(--accent-blue)';
+        toggleEditState(false);
+        saveChanges();
+      }
+    });
+
+    // --- ADD PROJECT MODAL ---
+    const addProjectModal = document.getElementById('add-project-modal');
+    document.getElementById('add-project-btn').addEventListener('click', () => {
+      // Clear fields
+      ['proj-title', 'proj-category', 'proj-desc', 'proj-github', 'proj-live'].forEach(id => document.getElementById(id).value = '');
+      addProjectModal.style.display = 'flex';
+    });
+    document.getElementById('proj-modal-cancel').addEventListener('click', () => { addProjectModal.style.display = 'none'; });
+    document.getElementById('proj-modal-add').addEventListener('click', () => {
+      const title = document.getElementById('proj-title').value || 'New Project';
+      const cat = document.getElementById('proj-category').value || 'Category';
+      const desc = document.getElementById('proj-desc').value || 'Project description.';
+      const gh = document.getElementById('proj-github').value;
+      const live = document.getElementById('proj-live').value;
+
+      let linksHTML = '';
+      if (gh) linksHTML += `<a href="${gh}" target="_blank" class="hud-btn hover-target" title="GitHub">⬡ GitHub</a>`;
+      if (live) linksHTML += `<a href="${live}" target="_blank" class="hud-btn hover-target" title="Live Demo" style="margin-left:8px;">↗ Live</a>`;
+      if (!gh && !live) linksHTML = `<a href="#" target="_blank" class="hud-btn hover-target">↗</a>`;
+
+      const projectsGrid = document.querySelector('.grid-2');
+      if (projectsGrid) {
+        const newProject = document.createElement('div');
+        newProject.className = 'hud-card hover-target';
+        newProject.innerHTML = `
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+          <h3 class="hud-title" style="font-size: 2rem;">${title}</h3>
+          <span class="hud-label">${cat}</span>
+          <p class="hud-desc" style="font-size: 1rem;">${desc}</p>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">${linksHTML}</div>
+        `;
+        projectsGrid.appendChild(newProject);
+        if (isEditMode) { toggleEditState(true); injectDeleteButtons(); }
+      }
+      addProjectModal.style.display = 'none';
+    });
+
+    // --- EDIT LINK MODAL (clicking ↗ buttons in edit mode) ---
+    const editLinkModal = document.getElementById('edit-link-modal');
+    let currentLinkTarget = null;
+    document.getElementById('edit-link-cancel').addEventListener('click', () => { editLinkModal.style.display = 'none'; });
+    document.getElementById('edit-link-save').addEventListener('click', () => {
+      if (currentLinkTarget) {
+        const newUrl = document.getElementById('edit-link-url').value.trim();
+        if (newUrl) currentLinkTarget.href = newUrl;
+      }
+      editLinkModal.style.display = 'none';
+    });
+
+    // Intercept .hud-btn link clicks in edit mode to open the URL editor
+    document.addEventListener('click', (e) => {
+      if (isEditMode && e.target.closest('.hud-btn') && !e.target.closest('#admin-panel')) {
+        e.preventDefault();
+        e.stopPropagation();
+        currentLinkTarget = e.target.closest('.hud-btn');
+        document.getElementById('edit-link-url').value = currentLinkTarget.href === location.href ? '' : currentLinkTarget.href;
+        editLinkModal.style.display = 'flex';
+      }
+    });
+
+    document.getElementById('add-experience-btn').addEventListener('click', () => {
+      const expContainer = document.querySelector('#experience .hud-card > div[style*="border-left"]');
+      if (expContainer) {
+        const newExp = document.createElement('div');
+        newExp.style.marginBottom = '50px';
+        newExp.style.position = 'relative';
+        newExp.innerHTML = `
+          <div style="position:absolute; width: 10px; height: 10px; background:var(--accent-blue); border-radius:50%; left:-35px; top:5px; box-shadow: 0 0 10px var(--accent-blue);"></div>
+          <h4 style="font-size: 1.4rem; margin-bottom: 5px;" contenteditable="true">New Job Title</h4>
+          <p style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 1px;" contenteditable="true">
+            Company | Start - End Date
+          </p>
+          <p style="color:#d1d5db; line-height: 1.6;" contenteditable="true">
+            Describe your responsibilities and achievements here.
+          </p>
+        `;
+        expContainer.insertBefore(newExp, expContainer.firstChild);
+        // Automatically make sure the newly added experience is editable immediately
+        if (isEditMode) {
+          toggleEditState(true);
+        }
+      }
+    });
+
+    document.getElementById('add-skill-btn').addEventListener('click', () => {
+      const skillsTrays = document.querySelectorAll('.skill-tray');
+      if (skillsTrays.length > 0) {
+        // Add to the first skill tray (Programming & Databases)
+        const newSkill = document.createElement('span');
+        newSkill.className = 'hud-chip';
+        newSkill.textContent = 'New Skill';
+        skillsTrays[0].appendChild(newSkill);
+        if (isEditMode) toggleEditState(true);
+      }
+    });
+
+    document.getElementById('add-education-btn').addEventListener('click', () => {
+      const eduCards = document.querySelectorAll('#experience .hud-card');
+      if (eduCards.length > 1) {
+        // The second card in the experience section is Education
+        const eduContainer = eduCards[1].querySelector('div[style*="margin-top: 40px"]');
+        if (eduContainer) {
+          const newEdu = document.createElement('div');
+          newEdu.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+          newEdu.style.paddingBottom = '25px';
+          newEdu.innerHTML = `
+              <h4 style="font-size: 1.3rem; margin-bottom: 5px; color: #fff;" contenteditable="true">New Institute Name</h4>
+              <p style="color: var(--accent-blue); font-family: 'Space Grotesk', monospace; font-size: 0.9rem; margin-bottom: 10px;" contenteditable="true">Start Year - End Year</p>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="color: #a1a1aa; font-weight: 500;" contenteditable="true">Degree / Certification Title</p>
+                <span class="hud-chip" contenteditable="true">Score</span>
+              </div>
+          `;
+          eduContainer.insertBefore(newEdu, eduContainer.firstChild);
+          if (isEditMode) {
+            toggleEditState(true);
+            injectDeleteButtons();
+          }
+        }
+      }
+    });
+
+    document.getElementById('discard-btn').addEventListener('click', () => {
+      showConfirm('Are you sure you want to discard your edits from this session? Your page will revert to how it looked immediately before you pressed Edit.', () => {
+        // Revert page structure locally
+        mainContent.innerHTML = sessionBackupMain;
+        document.querySelector('header').innerHTML = sessionBackupHeader;
+        // Turn off edit mode styling
+        isEditMode = false;
+        adminPanel.style.display = 'none';
+        editBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span>Edit Website</span>`;
+        editBtn.style.background = 'var(--accent-blue)';
+        document.body.classList.remove('edit-mode-active');
+        removeDeleteButtons();
+      });
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      showConfirm('WARNING: Factory Reset will completely wipe ALL changes forever. Proceed?', () => {
+        localStorage.removeItem(CACHE_KEY + '_main');
+        localStorage.removeItem(CACHE_KEY + '_header');
+        // Force fully reload from server/disk securely avoiding protocol failures
+        window.location.reload();
+      });
+    });
+
   </script>
 </body>
 
